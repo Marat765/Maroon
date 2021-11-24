@@ -49,7 +49,7 @@ exports.html = html;
 //Scripts
 
 const scripts = () => {
-  return gulp.src("source/js/main.js")
+  return gulp.src("source/js/*.js")
     .pipe(concat("main.js"))
     .pipe(terser())
     .pipe(rename("main.min.js"))
@@ -105,9 +105,7 @@ exports.sprite = sprite;
 const copy = (done) => {
   gulp.src([
       "source/fonts/*.{woff,woff2}",
-      "source/*.ico",
-      "source/manifest.webmanifest",
-      "source/js/picturefill.min.js"
+      "source/*.ico"
     ], {
       base: "source"
     })
